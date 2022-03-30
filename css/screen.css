@@ -29,8 +29,8 @@
 html {
   font-size: 16px;
   line-height: 1.5;
-  font-family: Helvetica, arial, sans-serif;
-  color: #3e3ea8;
+  font-family: "HK Grotesk Web", Arial, Helvetica, sans-serif;
+  color: #202024;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,6 +41,14 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+@media (min-width: 768px) {
+    html{
+        font-size: 20px;
+    }
+     
+}
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -157,16 +165,12 @@ a {
   transition: all 0.1s ease-in-out;
 }
 
-a:visited,
-a:active {
-  color: #3e3ea8;
+a:visited{
+  color: #5051db
 }
-
-a:hover,
-a:focus {
-  color: #3e3ea8;
+a:hover,a:focus,a:active{
+    color: #3E3EA8;
 }
-
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
@@ -177,6 +181,7 @@ a:focus {
 */
 
 .o-section {
+    display: flow-root;
 }
 
 .o-section + .o-section {
@@ -196,13 +201,14 @@ a:focus {
     }
 }
 
+
 /*
     Objects: List
     ---
     Small reusable object to remove default list styling from lists
 */
 
-.o-list {
+.o-list-reset {
     list-style: none;
     padding: 0;
 }
@@ -215,31 +221,27 @@ a:focus {
 */
 
 .o-row {
-  position: relative;
-  padding: 24px 24px 0;
-  display: flow-root;
+  
 }
 
 /* size modifiers */
 
 .o-row--lg {
-  padding: 48px 24px 24px;
+    padding: 48px 24px 0;
+  
 }
 
 @media (min-width: 768px) {
-html{
-    font-size: 20px;
-    line-height: 1.6;
+.o-row {
+padding-left: 48px; 
+padding-right: 48px;
 }
-  .o-row {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-
-  .o-row--lg {
-    padding-top: 72px;
-    padding-bottom: 48px;
-  }
+.o-row--md {
+padding-top: 48px; padding-bottom: 24px;
+}
+.o-row--lg {
+padding-top: 72px; padding-bottom: 48px;
+}
 }
 
 /*
@@ -252,7 +254,7 @@ html{
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 70.5em; /* 90 * 16px = 1440px */
+  max-width: 56.4em; /* 56.4 * 20px = 1128px xant font size is veranderd naar 20px ipv 16px*/
 }
 
 /*
@@ -382,18 +384,13 @@ html{
 */
 
 .c-header__nav {
-    display: none;
+    display:none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .c-header {
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
     }
 
     .c-header__nav {
@@ -401,46 +398,7 @@ html{
     }
 }
 
-/*
-    Component: Nav
-    ---
-    Main navigation of the site
-*/
 
-.c-nav {
-    font-size: 18px;
-    line-height: 24px;
-}
-
-.c-nav__link {
-    text-decoration: none;
-    font-weight: 400;
-    padding: 8px 0;
-}
-
-.c-nav__link,
-.c-nav__link:visited,
-.c-nav__link:active {
-    color: #202024;
-}
-.is-selected,
-.c-nav__link:hover,
-.c-nav__link:focus {
-    color: #5051db;
-}
-
-@media (min-width: 768px) {
-    .c-nav__list {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-
-    .c-nav__link {
-    }
-}
 /*
     Component: Logo
     ---
@@ -458,6 +416,46 @@ html{
 @media (min-width: 768px) {
     .c-logo__symbol {
         height: 40px;
+    }
+}
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav {
+    font-size: 18px;
+    line-height: 24px;
+}
+.c-nav__link {
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 8px 0;
+}
+.c-nav__meta{
+    font-size: 16px;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #202024;
+}
+.is-selected,
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #5051db;
+}
+
+@media (min-width: 768px) {
+    .c-nav__list {
+        display: flex;
+        gap: 32px;        
+    }
+
+    .c-nav__link {
     }
 }
 /*------------------------------------*\
