@@ -221,7 +221,9 @@ a:hover,a:focus,a:active{
 */
 
 .o-row {
-  
+  position: relative;
+  padding: 24px 24px 0;
+  display: flow-root;
 }
 
 /* size modifiers */
