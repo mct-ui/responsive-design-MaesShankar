@@ -232,6 +232,10 @@ a:hover,a:focus,a:active{
     padding: 48px 24px 0;
   
 }
+.o-row--gradient{
+  background: linear-gradient(to top, #5051DB 0%, #3887F7 100%);
+  color: #FFFF;
+}
 
 @media (min-width: 768px) {
 .o-row {
@@ -410,7 +414,7 @@ padding-top: 72px; padding-bottom: 48px;
 }
 
 .c-link-cta::after {
-  content: " and more";
+  content: "";
 }
 
 .c-link-cta::before {
@@ -435,6 +439,21 @@ padding-top: 72px; padding-bottom: 48px;
 .c-link-cta:hover::after {
   transform: scalex(1);
   background-color: #3E3EA8;
+}
+
+/* inversed */
+.c-link-cta--inverse,
+.c-link-cta--inverse:visited,
+.c-link-cta--inverse:active {
+  color: #ffff;
+}
+
+.c-link-cta--inverse::after {
+  background-color: #ffff;
+}
+
+.c-link-cta--inverse:hover::after {
+  background-color: #ffff;
 }
 /*
     Component: Lead
